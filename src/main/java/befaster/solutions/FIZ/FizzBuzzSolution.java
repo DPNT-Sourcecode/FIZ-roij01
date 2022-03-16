@@ -10,11 +10,11 @@ public class FizzBuzzSolution {
     public String fizzBuzz(Integer number) {
         String result = null;
         if(isFizz(number) && isBuzz(number))
-            result = threeMultiple + " " + fiveMultiple);
+            result = threeMultiple + " " + fiveMultiple;
         if(isFizz(number))
-            return threeMultiple;
+            result = threeMultiple;
         if(isBuzz(number))
-            return fiveMultiple;
+            result = fiveMultiple;
 
         return number.toString();
     }
@@ -45,5 +45,6 @@ public class FizzBuzzSolution {
     }
 
 }
+
 
 
