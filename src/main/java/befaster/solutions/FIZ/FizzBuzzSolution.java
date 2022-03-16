@@ -6,6 +6,7 @@ public class FizzBuzzSolution {
     private static final String threeMultiple = "fizz";
     private static final String fiveMultiple = "buzz";
     private static final String deluxeString = "deluxe";
+    private static final String fakeDeluxeString = "fake deluxe";
 
     public String fizzBuzz(Integer number) {
         String result = null;
@@ -16,10 +17,15 @@ public class FizzBuzzSolution {
         else if(isBuzz(number))
             result = fiveMultiple;
 
-        if(isDeluxe(number) && result != null)
+        if(isDeluxe(number) && result != null && number % 2 == 0)
             result = result.concat(" " + deluxeString);
-        else if(isDeluxe(number) && result == null)
+        else if(isDeluxe(number) && result != null && number % 2 != 0)
+            result = result.concat(" " + fakeDeluxeString);
+
+        else if(isDeluxe(number) && result == null && number % 2 == 0)
             result = deluxeString;
+        else if(isDeluxe(number) && result == null && number % 2 != 0)
+            result = fakeDeluxeString;
 
         if(result == null)
             return number.toString();
@@ -46,9 +52,9 @@ public class FizzBuzzSolution {
                 deluxe = false;
                 break;
             }
-
         }
         return deluxe;
     }
 
 }
+
