@@ -18,5 +18,14 @@ public class FizzBuzzSolution {
         return number.toString();
     }
 
+    public boolean containsThree(Integer number){
+        return number.toString().contains("3");
+    }
+
+    public boolean containsFive(Integer number){
+        return number.toString().contains("5");
+    }
+
 }
+
 
