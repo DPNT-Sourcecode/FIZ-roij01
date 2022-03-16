@@ -11,12 +11,19 @@ public class FizzBuzzSolution {
         String result = null;
         if(isFizz(number) && isBuzz(number))
             result = threeMultiple + " " + fiveMultiple;
-        if(isFizz(number))
+        else if(isFizz(number))
             result = threeMultiple;
-        if(isBuzz(number))
+        else if(isBuzz(number))
             result = fiveMultiple;
 
-        return number.toString();
+        if(isDeluxe(number) && result != null)
+            result = result.concat(" " + deluxeString);
+        else if(isDeluxe(number) && result == null)
+            result = deluxeString;
+
+        if(result == null)
+            return number.toString();
+        return result;
     }
 
     private boolean isFizz(Integer number){
@@ -45,6 +52,7 @@ public class FizzBuzzSolution {
     }
 
 }
+
 
 
 
