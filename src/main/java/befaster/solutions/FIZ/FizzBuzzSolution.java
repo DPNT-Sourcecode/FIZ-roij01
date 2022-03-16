@@ -41,20 +41,9 @@ public class FizzBuzzSolution {
     }
 
     private boolean isDeluxe(Integer number){
-        boolean deluxe = false;
-        while(number / 10 != 0){
-            Integer digit = number % 10;
-            if (digit == (number / 10) % 10) {
-                number = number / 10;
-                deluxe = true;
-            }
-            else{
-                deluxe = false;
-                break;
-            }
-        }
-        return deluxe;
+        return (number.toString().contains("3") && number % 3 == 0) || (number.toString().contains("5") && number % 5 == 0);
     }
 
 }
+
 
