@@ -8,22 +8,23 @@ public class FizzBuzzSolution {
 
     public String fizzBuzz(Integer number) {
 
-        if(number % 3 == 0 && number % 5 == 0)
+        if(isFizz(number) && isBuzz(number))
             return threeMultiple + " " + fiveMultiple;
-        if(number % 3 == 0)
+        if(isFizz(number))
             return threeMultiple;
-        if(number % 5 == 0)
+        if(isBuzz(number))
             return fiveMultiple;
 
         return number.toString();
     }
 
-    public boolean containsThree(Integer number){
-        return number.toString().contains("3");
+    private boolean isFizz(Integer number){
+        return (number.toString().contains("3") || number % 3 == 0);
     }
 
-    public boolean containsFive(Integer number){
-        return number.toString().contains("5");
+    private boolean isBuzz(Integer number){
+        return (number.toString().contains("5") || number % 5 == 0);
     }
 
 }
+
